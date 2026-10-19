@@ -1,0 +1,92 @@
+[
+  {
+    "title": "Машинное обучение для всех",
+    "description": "Легендарный курс Эндрю Нга: понятно объясняет, как машины находят закономерности в данных. Много практики на Python и ноль сложных формул на старте.",
+    "link": "https://www.coursera.org/learn/machine-learning",
+    "tags": ["ML", "Python"],
+    "source": "Coursera",
+    "level": "С нуля",
+    "duration": "≈ 60 часов"
+  },
+  {
+    "title": "Промпт-инжиниринг для разработчиков",
+    "description": "Короткий интенсив по общению с ChatGPT: структура промптов, итерации, суммаризация и работа с кодом. Идеально, чтобы получить первый вау-эффект за вечер.",
+    "link": "https://www.deeplearning.ai/short-courses/chatgpt-prompt-engineering-for-developers/",
+    "tags": ["Промпты", "ChatGPT"],
+    "source": "DeepLearning.AI",
+    "level": "Быстрый старт",
+    "duration": "≈ 2 часа"
+  },
+  {
+    "title": "Deep Learning: от нейрона до трансформера",
+    "description": "Специализация, которая собирает пазл глубокого обучения: нейросети, свёртки, последовательности и современные архитектуры. С домашними заданиями и понятной теорией.",
+    "link": "https://www.coursera.org/specializations/deep-learning",
+    "tags": ["Deep Learning", "Нейросети"],
+    "source": "Coursera",
+    "level": "Средний",
+    "duration": "≈ 120 часов"
+  },
+  {
+    "title": "NLP с Hugging Face",
+    "description": "Бесплатный практический курс по обработке языка: токенизация, трансформеры, fine-tuning и готовые модели. Всё в интерактивных ноутбуках, без сухой теории.",
+    "link": "https://huggingface.co/learn/nlp-course/chapter1/1",
+    "tags": ["NLP", "Трансформеры"],
+    "source": "Hugging Face",
+    "level": "Средний",
+    "duration": "≈ 25 часов"
+  },
+  {
+    "title": "Генеративный ИИ для каждого",
+    "description": "Спокойный вводный курс о том, как работает генеративный ИИ и где он полезен. Без кода: разбираем возможности, риски и реальные сценарии применения.",
+    "link": "https://www.coursera.org/learn/generative-ai-for-everyone",
+    "tags": ["Генеративный ИИ", "Без кода"],
+    "source": "Coursera",
+    "level": "Без кода",
+    "duration": "≈ 6 часов"
+  },
+  {
+    "title": "Практическое глубокое обучение",
+    "description": "Курс fast.ai для тех, кто хочет сразу строить работающие модели. Меньше математики, больше кода, экспериментов и разбора реальных проектов на PyTorch.",
+    "link": "https://www.fast.ai/",
+    "tags": ["Deep Learning", "PyTorch", "Практика"],
+    "source": "fast.ai",
+    "level": "Продвинутый",
+    "duration": "≈ 40 часов"
+  },
+  {
+    "title": "Нейросети с нуля: Zero to Hero",
+    "description": "Андрей Карпати пишет нейросеть руками, шаг за шагом — от бэкпропа до GPT. Лучший способ увидеть, что внутри «магии», если вы уже немного знаете Python.",
+    "link": "https://www.youtube.com/playlist?list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ",
+    "tags": ["Нейросети", "PyTorch", "Видео"],
+    "source": "YouTube",
+    "level": "Средний",
+    "duration": "≈ 25 часов"
+  },
+  {
+    "title": "ИИ на Azure: первый маршрут",
+    "description": "Бесплатный путь от Microsoft Learn: знакомство с облачным ИИ, когнитивными сервисами и ответственными подходами. Хороший старт, если ваш стек — Azure.",
+    "link": "https://learn.microsoft.com/en-us/training/paths/get-started-with-artificial-intelligence-on-azure/",
+    "tags": ["Azure", "Cloud"],
+    "source": "Microsoft Learn",
+    "level": "С нуля",
+    "duration": "≈ 8 часов"
+  },
+  {
+    "title": "Google AI Essentials",
+    "description": "Практичный курс о том, как встроить ИИ в ежедневную работу: формулировать запросы, проверять факты и ускорять рутину. Без программирования, с фокусом на результат.",
+    "link": "https://www.coursera.org/professional-certificates/google-ai-essentials",
+    "tags": ["Генеративный ИИ", "Без кода", "Продуктивность"],
+    "source": "Google · Coursera",
+    "level": "Без кода",
+    "duration": "≈ 10 часов"
+  },
+  {
+    "title": "Введение в машинное обучение",
+    "description": "Компактный бесплатный курс Kaggle: деревья решений, валидация и первый соревновательный проект. Отличный способ проверить, нравится ли вам ML на практике.",
+    "link": "https://www.kaggle.com/learn/intro-to-machine-learning",
+    "tags": ["ML", "Python", "Практика"],
+    "source": "Kaggle",
+    "level": "С нуля",
+    "duration": "≈ 5 часов"
+  }
+]

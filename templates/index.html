@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AI-дайджест — кураторская подборка лучших курсов по искусственному интеллекту. Поиск по темам, понятные маршруты и только полезные материалы.">
+  <meta name="theme-color" content="#08080b">
+  <title>AI-дайджест — курсы, которые хочется пройти</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23c8ff4d'/%3E%3Cpath d='M32 9l5.4 17.6L55 32l-17.6 5.4L32 55l-5.4-17.6L9 32l17.6-5.4z' fill='%2309090b'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script>document.documentElement.classList.add("js");</script>
+  <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</head>
+<body id="top">
+  <a class="skip-link" href="#courses">Перейти к курсам</a>
+
+  <div class="page-glow page-glow--one" aria-hidden="true"></div>
+  <div class="page-glow page-glow--two" aria-hidden="true"></div>
+  <div class="page-glow page-glow--three" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="#top" aria-label="AI-дайджест — на главную">
+        <span class="brand__mark">
+          <svg viewBox="0 0 32 32" aria-hidden="true">
+            <path d="M16 1.5l3.8 10.7L30.5 16l-10.7 3.8L16 30.5l-3.8-10.7L1.5 16l10.7-3.8L16 1.5z"/>
+          </svg>
+        </span>
+        <span class="brand__text">AI<span class="brand__slash">/</span>дайджест</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Основная навигация">
+        <a href="#courses">Курсы</a>
+        <a href="#about">О подборке</a>
+      </nav>
+
+      <a class="header-cta" href="#courses">
+        <span class="live-dot"></span>
+        {{ courses|length }} курсов
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container" aria-labelledby="hero-title">
+      <div class="hero__copy">
+        <p class="eyebrow reveal">
+          <span class="live-dot"></span>
+          Выпуск 01 · кураторская подборка
+        </p>
+
+        <h1 class="hero__title reveal" id="hero-title" style="--stagger: 60ms;">
+          Твой маршрут<br>
+          в <span class="gradient-text">мир AI</span><br>
+          <span class="outline-text">начинается здесь</span>
+        </h1>
+
+        <p class="hero__lead reveal" style="--stagger: 120ms;">
+          Дайджест AI-курсов с человеческим отбором: от первого промпта
+          до собственной нейросети. Без воды, случайных ссылок и бесконечного выбора.
+        </p>
+
+        <div class="hero__actions reveal" style="--stagger: 180ms;">
+          <a class="button button--primary" href="#courses">
+            Смотреть подборку
+            <span class="button__icon">
+              <svg viewBox="0 0 20 20" aria-hidden="true">
+                <path d="M4 10h11M11 5l5 5-5 5"/>
+              </svg>
+            </span>
+          </a>
+          <a class="button button--ghost" href="#about">Как мы выбирали</a>
+        </div>
+
+        <dl class="hero__stats reveal" style="--stagger: 240ms;">
+          <div class="hero-stat">
+            <dt>Материалов</dt>
+            <dd>{{ courses|length }}</dd>
+          </div>
+          <div class="hero-stat">
+            <dt>Тем для роста</dt>
+            <dd>{{ tags|length }}</dd>
+          </div>
+          <div class="hero-stat">
+            <dt>Бесплатных</dt>
+            <dd>5<span>+</span></dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="hero-art reveal" style="--stagger: 160ms;" aria-hidden="true">
+        <div class="hero-orbit">
+          <span class="orbit-ring orbit-ring--outer"></span>
+          <span class="orbit-ring orbit-ring--middle"></span>
+          <span class="orbit-ring orbit-ring--inner"></span>
+          <span class="orbit-dot orbit-dot--one"></span>
+          <span class="orbit-dot orbit-dot--two"></span>
+          <span class="orbit-dot orbit-dot--three"></span>
+          <div class="ai-orb">
+            <span>AI</span>
+          </div>
+        </div>
+
+        <div class="float-pill float-pill--top">
+          <span class="live-dot"></span>
+          {{ courses|length }} материалов
+        </div>
+
+        <div class="float-pill float-pill--bottom">
+          обновлено <strong>сегодня</strong>
+        </div>
+
+        <div class="float-card">
+          <span class="float-card__label">Следующий шаг</span>
+          <strong>Промпт-инжиниринг</strong>
+          <span class="float-card__meta">2 часа · без кода</span>
+          <span class="float-card__arrow">↗</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Промпты</span><i>✳</i>
+        <span>Нейросети</span><i>✳</i>
+        <span>Machine Learning</span><i>✳</i>
+        <span>Генеративный ИИ</span><i>✳</i>
+        <span>Python</span><i>✳</i>
+        <span>NLP</span><i>✳</i>
+        <span>Промпты</span><i>✳</i>
+        <span>Нейросети</span><i>✳</i>
+        <span>Machine Learning</span><i>✳</i>
+        <span>Генеративный ИИ</span><i>✳</i>
+        <span>Python</span><i>✳</i>
+        <span>NLP</span><i>✳</i>
+      </div>
+    </div>
+
+    <section class="courses-section container" id="courses" aria-labelledby="courses-title">
+      <div class="section-heading reveal">
+        <div>
+          <p class="eyebrow">Каталог</p>
+          <h2 id="courses-title">Собери свой<br><span class="accent-text">маршрут в AI</span></h2>
+        </div>
+        <p class="section-heading__lead">
+          Фильтруй по теме или ищи по названию. Открывай материал,
+          когда почувствуешь, что это точно твоё.
+        </p>
+      </div>
+
+      <div class="catalog-controls reveal">
+        <div class="search-row">
+          <label class="search-box" for="searchInput">
+            <svg class="search-box__icon" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="11" cy="11" r="6.5"/>
+              <path d="M16 16l4 4"/>
+            </svg>
+            <input
+              type="search"
+              id="searchInput"
+              placeholder="Найти курс, тему или платформу"
+              autocomplete="off"
+              spellcheck="false"
+            >
+            <button class="search-box__clear" id="clearSearch" type="button" aria-label="Очистить поиск" hidden>
+              <svg viewBox="0 0 20 20" aria-hidden="true">
+                <path d="M5 5l10 10M15 5L5 15"/>
+              </svg>
+            </button>
+            <kbd class="search-box__hint">/</kbd>
+          </label>
+
+          <p class="result-count" aria-live="polite">
+            <span id="visibleCount">{{ courses|length }}</span>
+            <span id="resultWord">материалов</span>
+          </p>
+        </div>
+
+        <div class="filter-row">
+          <span class="filter-row__label">Темы:</span>
+          <div class="tag-filters" role="group" aria-label="Фильтр по темам">
+            <button class="filter-chip is-active" type="button" data-tag="all" aria-pressed="true">
+              Все <span>{{ courses|length }}</span>
+            </button>
+            {% for tag, count in tags %}
+              <button class="filter-chip" type="button" data-tag="{{ tag|lower }}" aria-pressed="false">
+                #{{ tag }} <span>{{ count }}</span>
+              </button>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+      <div class="course-grid" id="courseGrid">
+        {% for course in courses %}
+          <article
+            class="course-card accent-{{ loop.index0 % 5 }}"
+            style="--stagger: {{ loop.index0 * 55 }}ms;"
+            data-tags="{{ course.tags|join('|')|lower }}"
+            data-search="{{ (course.title ~ ' ' ~ course.description ~ ' ' ~ course.source ~ ' ' ~ (course.tags|join(' ')))|lower }}"
+          >
+            <div class="card-top">
+              <span class="card-number">{{ "%02d"|format(loop.index) }}</span>
+              <span class="card-level">{{ course.level }}</span>
+            </div>
+
+            <div class="card-body">
+              <p class="card-source">
+                <span class="card-source__dot"></span>
+                {{ course.source }}
+              </p>
+              <h3>{{ course.title }}</h3>
+              <p class="card-description">{{ course.description }}</p>
+
+              <div class="card-tags">
+                {% for tag in course.tags %}
+                  <button class="tag-chip" type="button" data-tag="{{ tag|lower }}">#{{ tag }}</button>
+                {% endfor %}
+              </div>
+            </div>
+
+            <div class="card-footer">
+              <span class="card-duration">
+                <svg viewBox="0 0 20 20" aria-hidden="true">
+                  <circle cx="10" cy="10" r="7.5"/>
+                  <path d="M10 6v4.5l3 2"/>
+                </svg>
+                {{ course.duration }}
+              </span>
+              <a class="card-link" href="{{ course.link }}" target="_blank" rel="noopener noreferrer">
+                Открыть материал
+                <span class="card-link__icon">
+                  <svg viewBox="0 0 20 20" aria-hidden="true">
+                    <path d="M6 14L14 6M8 6h6v6"/>
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+
+      <div class="empty-state" id="emptyState" hidden>
+        <span class="empty-state__icon">?</span>
+        <h3>Ничего не нашлось</h3>
+        <p>Попробуйте другой запрос или сбросьте фильтры — хороший курс точно где-то рядом.</p>
+        <button class="button button--primary" type="button" id="resetFilters">
+          Показать все курсы
+        </button>
+      </div>
+    </section>
+
+    <section class="manifesto container" id="about" aria-labelledby="about-title">
+      <div class="manifesto__panel reveal">
+        <div class="manifesto__intro">
+          <p class="eyebrow">Наш фильтр</p>
+          <h2 id="about-title">Меньше шума.<br>Больше <span class="outline-text">сигнала.</span></h2>
+          <p>
+            Мы не собираем всё подряд. В подборку попадают материалы,
+            у которых понятная программа, живая практика и реальная польза.
+          </p>
+        </div>
+
+        <ol class="principles">
+          <li>
+            <span class="principles__number">01</span>
+            <div>
+              <strong>Проверяем содержание</strong>
+              <p>Смотрим программу, практику, уровень и дату обновления.</p>
+            </div>
+          </li>
+          <li>
+            <span class="principles__number">02</span>
+            <div>
+              <strong>Собираем маршрут</strong>
+              <p>От первого промпта до глубокого обучения — без резких прыжков.</p>
+            </div>
+          </li>
+          <li>
+            <span class="principles__number">03</span>
+            <div>
+              <strong>Оставляем только ценное</strong>
+              <p>Никаких случайных ссылок и материалов «на всякий случай».</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="final-cta container">
+      <div class="cta-panel reveal">
+        <p class="eyebrow">Выбор сделан?</p>
+        <h2>Хватит коллекционировать<br><span class="accent-text">курсы. Пора учиться.</span></h2>
+        <a class="button button--primary" href="#courses">
+          Выбрать курс
+          <span class="button__icon">
+            <svg viewBox="0 0 20 20" aria-hidden="true">
+              <path d="M4 10h11M11 5l5 5-5 5"/>
+            </svg>
+          </span>
+        </a>
+        <span class="cta-panel__ai" aria-hidden="true">AI</span>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <a class="brand brand--footer" href="#top">
+        <span class="brand__mark">
+          <svg viewBox="0 0 32 32" aria-hidden="true">
+            <path d="M16 1.5l3.8 10.7L30.5 16l-10.7 3.8L16 30.5l-3.8-10.7L1.5 16l10.7-3.8L16 1.5z"/>
+          </svg>
+        </span>
+        <span class="brand__text">AI<span class="brand__slash">/</span>дайджест</span>
+      </a>
+      <p>Кураторская подборка курсов по искусственному интеллекту.</p>
+      <p class="site-footer__year">© {{ current_year }}</p>
+    </div>
+  </footer>
+</body>
+</html>
